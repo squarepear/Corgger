@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  client:
+    build: ./client
+    restart: always
+    ports:
+      - 80:80
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - 8150:8150
+    links:
+      - "db:database"
+  db:
+    image: mongo:4
+    restart: always
+    ports:
+      - 8081:8081

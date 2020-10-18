@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "./backend"
+		},
+		{
+			"path": "./client",
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"node_modules": true,
+			"backend": true,
+			"client": true
+		}
+	}
+}

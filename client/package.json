@@ -1,0 +1,19 @@
+{
+  "name": "corgger-client",
+  "version": "0.0.1",
+  "description": "A simple Twitter clone",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "vite": "^1.0.0-rc.1",
+    "@vue/compiler-sfc": "^3.0.0-rc.1"
+  },
+  "repository": "https://github.com/SquarePear/Corgger",
+  "author": "Jeffrey Harmon",
+  "license": "MIT"
+}
