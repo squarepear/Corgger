@@ -5,13 +5,13 @@ import fuzzySearch from 'mongoose-fuzzy-searching'
 const MessageSchema = Schema({
   owner: {
     type: Types.ObjectId,
-    index: true
+    index: true,
   },
   content: {
-    type: String
-  }
+    type: String,
+  },
 })
 
-MessageSchema.plugin(fuzzySearch, { fields: ['content'] });
+MessageSchema.plugin(fuzzySearch, { fields: ['content'] })
 
 export default model('Message', MessageSchema)

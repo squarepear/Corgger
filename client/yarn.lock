@@ -1638,6 +1638,16 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.28, postcss@^7.0.3
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+prettier-plugin-package@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-package/-/prettier-plugin-package-1.2.0.tgz#41d88e51081a5c8960707856940caefb43657308"
+  integrity sha512-sAnstFRpaHU+pd3WpQh3X9ePMQWgL0lWhvtXHQhk4Njw42qiaV2Navnpxzps/6UEqc/VQ4rjqOPgiZd498JIhQ==
+
+prettier@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.1.2.tgz#3050700dae2e4c8b67c4c3f666cdb8af405e1ce5"
+  integrity sha512-16c7K+x4qVlJg9rEbXl7HEGmQyZlG4R9AgP+oHKRMsMsuk8s+ATStlf1NpDqyBI1HpVyfjLOeMhH2LvuNvV5Vg==
+
 pump@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/pump/-/pump-3.0.0.tgz#b4a2116815bde2f4e1ea602354e8c75565107a64"
@@ -2014,6 +2024,11 @@ vite@^1.0.0-rc.1:
     slash "^3.0.0"
     vue "^3.0.0-rc.5"
     ws "^7.2.3"
+
+vue-router@^4.0.0-beta.13:
+  version "4.0.0-beta.13"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.0-beta.13.tgz#4611d09a9e44f231cc401ecc294a7f2dcb30e6a6"
+  integrity sha512-dYv9qpHPaojQlfujViiTkPkf1Bf5RCFzkCkdVFc1cENzWJYAGJanpIHiyjyKoM4u7IDFBZMItci+U4ieaEWA8A==
 
 vue@^3.0.0-rc.1, vue@^3.0.0-rc.5:
   version "3.0.1"

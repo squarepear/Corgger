@@ -5,16 +5,16 @@
 		},
 		{
 			"path": "./client",
-		},
-		{
-			"path": "."
 		}
 	],
 	"settings": {
 		"files.exclude": {
 			"node_modules": true,
-			"backend": true,
-			"client": true
+			"dist": true
+		},
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		}
 	}
 }

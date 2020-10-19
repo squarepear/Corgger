@@ -4,23 +4,26 @@ import fuzzySearch from 'mongoose-fuzzy-searching'
 
 const UserSchema = Schema({
   displayname: {
-    type: String
+    type: String,
   },
   username: {
-    type: String
+    type: String,
   },
   tag: {
-    type: String
+    type: String,
+  },
+})
+
+UserSchema.index(
+  {
+    username: 1,
+    tag: 1,
+  },
+  {
+    unique: true,
   }
-})
+)
 
-UserSchema.index({
-  username: 1,
-  tag: 1
-}, {
-  unique: true
-})
-
-UserSchema.plugin(fuzzySearch, { fields: ['displayname', 'username'] });
+UserSchema.plugin(fuzzySearch, { fields: ['displayname', 'username'] })
 
 export default model('User', UserSchema)
