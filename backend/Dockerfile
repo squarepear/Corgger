@@ -12,4 +12,5 @@ COPY package.json yarn.lock ./
 RUN yarn install
 EXPOSE 8150
 COPY --from=build-stage /app/dist dist/
+ENV JWT_SECRET="CHANGE_ME"
 CMD ["yarn", "start"]
