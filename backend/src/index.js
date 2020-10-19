@@ -7,16 +7,10 @@ import routes from 'routes'
 
 connect('mongodb://database:27017/corgger')
 
-const app = express()
+export const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
-routes.create(app)
-
-app.get('/', (req, res) => {
-  res.json({ message: req.body })
-})
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {

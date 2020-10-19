@@ -1,3 +1,3 @@
-export * as user from './user'
-export * as message from './message'
-export * as connection from './connection'
+export { default as User } from './user'
+export { default as Message } from './message'
+export { default as Connection } from './connection'

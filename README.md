@@ -1,4 +1,4 @@
-# Corgger
+# ![Paw](./paw.svg) Corgger
 A simple Twitter clone
 
 ## Usage

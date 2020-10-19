@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose'
+import { comparePassword, createPassword, createTag } from '../utils/user'
 
 import fuzzySearch from 'mongoose-fuzzy-searching'
 
@@ -11,18 +12,15 @@ const UserSchema = Schema({
   },
   tag: {
     type: String,
+    default: createTag(),
+  },
+  password: {
+    type: String,
   },
 })
 
-UserSchema.index(
-  {
-    username: 1,
-    tag: 1,
-  },
-  {
-    unique: true,
-  }
-)
+UserSchema.methods.createPassword = createPassword
+UserSchema.methods.comparePassword = comparePassword
 
 UserSchema.plugin(fuzzySearch, { fields: ['displayname', 'username'] })
 

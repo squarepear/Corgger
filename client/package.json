@@ -10,13 +10,20 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-2",
     "vue": "^3.0.0-rc.1",
     "vue-router": "^4.0.0-beta.13"
   },
   "devDependencies": {
+    "@prettier/plugin-pug": "^1.9.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "prettier": "^2.1.2",
     "prettier-plugin-package": "^1.2.0",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
     "vite": "^1.0.0-rc.1"
   }
 }
