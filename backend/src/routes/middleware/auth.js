@@ -1,4 +1,3 @@
-import { User } from '../../db/models'
 import jwt from 'jsonwebtoken'
 
 export function verifyToken(req, res, next) {

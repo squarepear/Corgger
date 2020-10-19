@@ -11,22 +11,11 @@ nav
       fa-icon(:icon='["fas", "user"]', size='2x')
 </template>
 
-<script>
-import { routes } from '../router'
-
-export default {
-  setup() {
-    return {
-      routes,
-    }
-  },
-}
-</script>
-
 <style scoped>
 nav {
   width: 100%;
   height: 6vh;
+  margin: 0;
   background-color: #dddddd;
   display: flex;
   flex-direction: row;
@@ -41,5 +30,13 @@ nav > ul {
   padding: 0;
   display: flex;
   align-items: center;
+}
+
+nav > ul:first-child {
+  margin-left: 2vh;
+}
+
+nav > ul:last-child {
+  margin-right: 2vh;
 }
 </style>

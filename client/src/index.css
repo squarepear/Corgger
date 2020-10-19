@@ -1,14 +1,18 @@
---dark-liver-horses: #533c2dff;
+/* --dark-liver-horses: #533c2dff;
 --khaki-web: #d9c6a6ff;
 --burnt-orange: #cf5002ff;
 --purple-mountain-majesty: #9c77c3ff;
---medium-slate-blue: #7d5dddff;
+--medium-slate-blue: #7d5dddff; */
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }

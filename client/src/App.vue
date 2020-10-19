@@ -1,6 +1,6 @@
 <template lang="pug">
 Nav
-router-view
+router-view.router
 </template>
 
 <script>
@@ -13,3 +13,8 @@ export default {
   },
 }
 </script>
+
+<style>
+.router {
+}
+</style>

@@ -4,11 +4,16 @@ import Home from '../views/Home.vue'
 
 const history = createWebHistory()
 
-export const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/auth',
+    name: 'Authentication',
+    component: () => import('../views/Auth.vue'),
   },
 ]
 

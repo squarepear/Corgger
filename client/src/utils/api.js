@@ -1,14 +1,13 @@
-import { join } from 'path'
-
-export const address = 'http://backend:3000/'
+export const address = 'http://localhost:8150/'
 
 async function getData(id, data = {}) {
-  const response = await fetch(join(address, id), {
+  const response = await fetch(address + id, {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
+      'x-access-token': localStorage.getItem('jwt'),
       'Content-Type': 'application/json',
     },
     redirect: 'follow',
@@ -20,12 +19,13 @@ async function getData(id, data = {}) {
 }
 
 async function postData(id, data = {}) {
-  const response = await fetch(join(address, id), {
+  const response = await fetch(address + id, {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
     credentials: 'same-origin',
     headers: {
+      'x-access-token': localStorage.getItem('jwt'),
       'Content-Type': 'application/json',
     },
     redirect: 'follow',
@@ -37,24 +37,22 @@ async function postData(id, data = {}) {
 }
 
 export async function signupUser(displayname, username, tag, password) {
-  const users = await getData('auth/signup', {
+  const data = await postData('auth/signup', {
     displayname,
     username,
     tag,
     password,
   })
-
-  return users
 }
 
 export async function signinUser(username, tag, password) {
-  const users = await getData('auth/signin', {
+  const data = await postData('auth/signin', {
     username,
     tag,
     password,
   })
 
-  return users
+  localStorage.setItem('jwt', data.accessToken)
 }
 
 export async function getUsersByName(name) {
