@@ -43,6 +43,8 @@ export async function signupUser(displayname, username, tag, password) {
     tag,
     password,
   })
+
+  return data
 }
 
 export async function signinUser(username, tag, password) {
@@ -53,12 +55,35 @@ export async function signinUser(username, tag, password) {
   })
 
   localStorage.setItem('jwt', data.accessToken)
+
+  delete data.accessToken
+
+  localStorage.setItem('userInfo', data)
+
+  return data
+}
+
+export async function postMessage(content) {
+  const data = await postData('message/post', {
+    content,
+  })
+
+  return data
+}
+
+export async function getMessagesByUser(username, tag) {
+  const data = await getData('message/get_by_user', {
+    username,
+    tag,
+  })
+
+  return data
 }
 
 export async function getUsersByName(name) {
-  const users = await getData('user/get_by_name', {
+  const data = await getData('user/get_by_name', {
     name,
   })
 
-  return users
+  return data
 }

@@ -1,4 +1,5 @@
-import { User } from '../../db/models'
+import { Message, User } from '../../db/models'
+
 import { createTag } from '../../db/utils/user'
 import { sign } from 'jsonwebtoken'
 
@@ -63,5 +64,44 @@ export function signin(req, res) {
       tag: user.tag,
       accessToken: token,
     })
+  })
+}
+
+export function postMessage(req, res) {
+  const message = new Message({
+    owner: req.userId,
+    content: req.body.content,
+  })
+
+  message.save((err, message) => {
+    if (err) return res.status(500).send({ message: err })
+
+    res.status(200).send({
+      id: message._id,
+      owner: message.owner,
+      content: message.content,
+      date: message.date,
+    })
+  })
+}
+
+export function followUser(req, res) {
+  User.findOne({
+    _id: req.userId,
+  }).exec((err, user) => {
+    if (err) return res.status(500).send({ message: err })
+
+    const otherUser =
+      user.isFollowing(req.body.username, req.body.tag) ||
+      user.followUser(req.body.username, req.body.tag)
+
+    if (otherUser)
+      return res.status(200).send({
+        id: otherUser._id,
+        displayname: otherUser.displayname,
+        username: otherUser.username,
+        tag: otherUser.tag,
+      })
+    else return res.status(404).send({ message: 'User Not found.' })
   })
 }
