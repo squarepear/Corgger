@@ -1,4 +1,5 @@
 import './db/models'
+import 'regenerator-runtime/runtime.js'
 
 import bodyParser from 'body-parser'
 import { connect } from 'mongoose'
