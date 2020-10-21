@@ -13,7 +13,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-const router = import('./routes')
+export const router = import('./routes')
 
 const PORT = process.env.PORT || 8150
 app.listen(PORT, () => {

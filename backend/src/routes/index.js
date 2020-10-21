@@ -9,6 +9,11 @@ import { checkToken, requireToken } from './middleware/auth'
 
 import { app } from '../'
 
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).send({ type: 'error', message: 'Something broke!' })
+})
+
 app.use(checkToken)
 
 app.get('/', (req, res) => {
