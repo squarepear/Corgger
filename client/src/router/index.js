@@ -8,18 +8,18 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home,
+    component: Home
   },
   {
     path: '/auth',
     name: 'Authentication',
-    component: () => import('../views/Auth.vue'),
+    component: () => import('../views/Auth.vue')
   },
   {
     path: '/auth/logout',
     name: 'Logout',
-    component: () => import('../views/Logout.vue'),
-  },
+    component: () => import('../views/Logout.vue')
+  }
 ]
 
 export default createRouter({ history, routes })

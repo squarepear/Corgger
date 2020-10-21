@@ -7,7 +7,7 @@
 import { onBeforeMount, onMounted } from 'vue'
 
 export default {
-  setup() {
+  setup () {
     onBeforeMount(() => {
       localStorage.removeItem('jwt')
       localStorage.removeItem('userInfo')
@@ -16,6 +16,6 @@ export default {
     onMounted(() => {
       this.$route.router.go('/')
     })
-  },
+  }
 }
 </script>

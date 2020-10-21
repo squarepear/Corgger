@@ -4,13 +4,13 @@ const ConnectionSchema = Schema({
   follower: {
     type: Types.ObjectId,
     ref: 'User',
-    index: true,
+    index: true
   },
   followee: {
     type: Types.ObjectId,
     ref: 'User',
-    index: true,
-  },
+    index: true
+  }
 })
 
 export default model('Connection', ConnectionSchema)

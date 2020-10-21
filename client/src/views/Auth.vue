@@ -19,24 +19,24 @@
 import { signinUser, signupUser } from '../utils/api'
 
 export default {
-  data() {
+  data () {
     return {
       signin: false,
       displayname: '',
       username: '',
       tag: '',
-      password: '',
+      password: ''
     }
   },
   methods: {
-    submit() {
+    submit () {
       if (this.signin) signinUser(this.username, this.tag, this.password)
       else signupUser(this.displayname, this.username, this.tag, this.password)
     },
-    switch() {
+    switch () {
       this.signin = !this.signin
-    },
-  },
+    }
+  }
 }
 </script>
 

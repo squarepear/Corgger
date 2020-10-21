@@ -3,7 +3,7 @@ import {
   followUser,
   postMessage,
   signin,
-  signup,
+  signup
 } from './middleware/user'
 import { checkToken, requireToken } from './middleware/auth'
 

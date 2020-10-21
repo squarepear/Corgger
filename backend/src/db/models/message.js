@@ -6,20 +6,20 @@ const MessageSchema = Schema({
   owner: {
     type: Types.ObjectId,
     ref: 'User',
-    index: true,
+    index: true
   },
   parent: {
     type: Types.ObjectId,
     ref: 'Message',
-    index: true,
+    index: true
   },
   content: {
-    type: String,
+    type: String
   },
   date: {
     type: Date,
-    default: Date.now(),
-  },
+    default: Date.now()
+  }
 })
 
 MessageSchema.plugin(fuzzySearch, { fields: ['content'] })

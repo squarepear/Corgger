@@ -5,25 +5,25 @@ import {
   createTag,
   followUser,
   isFollowedBy,
-  isFollowing,
+  isFollowing
 } from '../utils/user'
 
 import fuzzySearch from 'mongoose-fuzzy-searching'
 
 const UserSchema = Schema({
   displayname: {
-    type: String,
+    type: String
   },
   username: {
-    type: String,
+    type: String
   },
   tag: {
     type: String,
-    default: createTag(),
+    default: createTag()
   },
   password: {
-    type: String,
-  },
+    type: String
+  }
 })
 
 UserSchema.methods.createPassword = createPassword
@@ -33,7 +33,7 @@ UserSchema.methods.isFollowing = isFollowing
 UserSchema.methods.followUser = followUser
 
 UserSchema.plugin(fuzzySearch, {
-  fields: ['displayname', 'username'],
+  fields: ['displayname', 'username']
 })
 
 export default model('User', UserSchema)

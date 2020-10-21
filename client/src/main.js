@@ -5,7 +5,7 @@ import {
   faHeart,
   faHeartBroken,
   faPaw,
-  faUser,
+  faUser
 } from '@fortawesome/free-solid-svg-icons'
 
 import App from './App.vue'

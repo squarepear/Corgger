@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 
-export function requireToken(req, res, next) {
+export function requireToken (req, res, next) {
   const token = req.headers['x-access-token']
 
   if (!token) return res.status(403).send({ message: 'No token provided!' })
@@ -13,7 +13,7 @@ export function requireToken(req, res, next) {
   })
 }
 
-export function checkToken(req, res, next) {
+export function checkToken (req, res, next) {
   const token = req.headers['x-access-token']
 
   if (!token) return next()
