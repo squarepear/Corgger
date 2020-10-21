@@ -58,7 +58,7 @@ export async function signinUser(username, tag, password) {
 
   delete data.accessToken
 
-  localStorage.setItem('userInfo', data)
+  localStorage.setItem('userInfo', JSON.stringify(data))
 
   return data
 }

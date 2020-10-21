@@ -15,6 +15,11 @@ const routes = [
     name: 'Authentication',
     component: () => import('../views/Auth.vue'),
   },
+  {
+    path: '/auth/logout',
+    name: 'Logout',
+    component: () => import('../views/Logout.vue'),
+  },
 ]
 
 export default createRouter({ history, routes })
