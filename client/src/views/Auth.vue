@@ -40,12 +40,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .auth {
   text-align: center;
-}
 
-.hover:hover {
-  cursor: pointer;
+  .hover:hover {
+    cursor: pointer;
+  }
 }
 </style>

@@ -11,7 +11,7 @@ nav
       fa-icon(:icon='["fas", "user"]', size='2x')
 </template>
 
-<style scoped>
+<style lang="scss"  scoped>
 nav {
   width: 100%;
   height: 6vh;
@@ -20,23 +20,23 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
 
-nav > ul {
-  list-style-type: none;
-  flex-shrink: 1;
+  > ul {
+    list-style-type: none;
+    flex-shrink: 1;
 
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
 
-nav > ul:first-child {
-  margin-left: 2vh;
-}
+    &:first-child {
+      margin-left: 2vh;
+    }
 
-nav > ul:last-child {
-  margin-right: 2vh;
+    &:last-child {
+      margin-right: 2vh;
+    }
+  }
 }
 </style>
