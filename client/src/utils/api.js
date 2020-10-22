@@ -44,6 +44,12 @@ export async function signupUser (displayname, username, tag, password) {
     password
   })
 
+  localStorage.setItem('jwt', data.accessToken)
+
+  delete data.accessToken
+
+  localStorage.setItem('userInfo', JSON.stringify(data))
+
   return data
 }
 
@@ -66,6 +72,21 @@ export async function signinUser (username, tag, password) {
 export async function postMessage (content) {
   const data = await postData('message/post', {
     content
+  })
+
+  return data
+}
+
+export async function getSelfInfo () {
+  const data = await getData('self/info')
+
+  return data
+}
+
+export async function getUserInfo (username, tag) {
+  const data = await getData('user/info', {
+    username,
+    tag
   })
 
   return data

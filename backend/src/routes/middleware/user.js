@@ -71,6 +71,44 @@ export async function signin (req, res, next) {
   }
 }
 
+export async function setSelfRequest (req, res, next) {
+  try {
+    const user = await User.findOne({
+      _id: req.userId
+    }).exec()
+
+    req.body.id = user._id
+    req.body.username = user.username
+    req.body.tag = user.tag
+
+    next()
+  } catch (err) {
+    next(err)
+  }
+}
+
+export async function getUserInfoByUsername (req, res, next) {
+  try {
+    const user = await User.findOne({
+      username: req.body.username,
+      tag: req.body.tag
+    }).exec()
+
+    if (!user) return res.status(404).send({ message: 'User Not found.' })
+
+    res.status(200).send({
+      id: user._id,
+      displayname: user.displayname,
+      username: user.username,
+      tag: user.tag
+    })
+
+    next()
+  } catch (err) {
+    next(err)
+  }
+}
+
 export async function postMessage (req, res, next) {
   const message = new Message({
     owner: req.userId,

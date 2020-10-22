@@ -23,7 +23,13 @@ const routes = [
   {
     path: '/profile',
     name: 'Profile',
-    component: () => import('../views/Profile/Own.vue')
+    component: () => import('../views/Profile.vue')
+  },
+  {
+    path: '/user/:username/:tag',
+    name: 'User',
+    component: () => import('../views/Profile.vue'),
+    props: true
   }
 ]
 

@@ -1,7 +1,9 @@
 import {
   checkDuplicate,
   followUser,
+  getUserInfoByUsername,
   postMessage,
+  setSelfRequest,
   signin,
   signup
 } from './middleware/user'
@@ -21,9 +23,11 @@ app.get('/', (req, res) => {
 })
 
 app.post('/auth/signup', checkDuplicate, signup, signin)
-
 app.post('/auth/signin', signin)
 
 app.post('/message/post', requireToken, postMessage)
 
+app.post('/self/info', requireToken, setSelfRequest, getUserInfoByUsername)
+
+app.post('/user/info', getUserInfoByUsername)
 app.post('/user/follow', requireToken, followUser)

@@ -7,7 +7,6 @@
     input#password(type="password", name="password", v-model='password')
   .signup(v-else)
     h1 Signup
-    input#displayname(type="text", name="displayname", v-model='displayname')
     input#username(type="text", name="username", v-model='username')
     input#tag(type="number", name="tag", v-model='tag')
     input#password(type="password", name="password", v-model='password')
@@ -22,7 +21,6 @@ export default {
   data () {
     return {
       signin: false,
-      displayname: '',
       username: '',
       tag: '',
       password: ''
@@ -30,8 +28,8 @@ export default {
   },
   methods: {
     submit () {
-      if (this.signin) signinUser(this.username, this.tag, this.password)
-      else signupUser(this.displayname, this.username, this.tag, this.password)
+      if (this.signin) signinUser(this.username.toLowerCase(), this.tag, this.password)
+      else signupUser(this.username, this.username.toLowerCase(), this.tag, this.password)
     },
     switch () {
       this.signin = !this.signin
